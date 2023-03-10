@@ -13,7 +13,7 @@ class ProfileHeaderView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "User Avatar")
         imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 30
+        imageView.layer.cornerRadius = 50
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 3
         imageView.layer.borderColor = UIColor.white.cgColor
@@ -36,6 +36,7 @@ class ProfileHeaderView: UIView {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 3
         return label
     }()
 
@@ -69,23 +70,22 @@ class ProfileHeaderView: UIView {
         addSubview(button)
 
         NSLayoutConstraint.activate([
-            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            avatarImageView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16),
             avatarImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
-            avatarImageView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -16),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 60),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 60),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 100),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 100),
 
-            nameLabel.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor, constant: 27),
-            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            nameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 27),
+            nameLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
 
-            statusLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            statusLabel.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -34),
+            statusLabel.trailingAnchor.constraint(lessThanOrEqualTo: safeAreaLayoutGuide.trailingAnchor),
             statusLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            statusLabel.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
 
-            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -34),
-            button.heightAnchor.constraint(equalToConstant: 50)
+            button.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            button.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            button.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
+            button.heightAnchor.constraint(equalToConstant: 50),
         ])
 
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
