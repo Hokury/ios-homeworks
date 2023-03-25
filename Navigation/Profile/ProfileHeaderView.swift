@@ -133,7 +133,13 @@ class ProfileHeaderView: UIView {
 
     @objc private func setStatus() {
         guard let newStatus = statusTextField.text else { return }
-        statusLabel.text = newStatus
+
+        if newStatus == "" {
+            statusLabel.text = " "
+        } else {
+            statusLabel.text = newStatus
+        }
+
         statusTextField.text = ""
     }
 }
