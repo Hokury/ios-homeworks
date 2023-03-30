@@ -20,10 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let feedNavigationController = UINavigationController(rootViewController: feedViewController)
         feedNavigationController.tabBarItem = UITabBarItem(title: "Лента", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+
         let logInNavigationController = UINavigationController(rootViewController: logInViewController)
+
         logInNavigationController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
 
-        let myPost = Post(title: "Мой новый пост")
+        let myPost = Post(title: "Новый пост")
         postViewController.post = myPost
 
         let tabBarController = UITabBarController()
