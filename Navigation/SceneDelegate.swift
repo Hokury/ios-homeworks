@@ -15,20 +15,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let feedViewController = FeedViewController()
-        let profileViewController = ProfileViewController()
         let postViewController = PostViewController()
+        let logInViewController = LogInViewController()
 
         let feedNavigationController = UINavigationController(rootViewController: feedViewController)
         feedNavigationController.tabBarItem = UITabBarItem(title: "Лента", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        let logInNavigationController = UINavigationController(rootViewController: logInViewController)
+        logInNavigationController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
 
-        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
-        profileNavigationController.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
-
-        let myPost = Post(title: "Новый пост")
+        let myPost = Post(title: "Мой новый пост")
         postViewController.post = myPost
 
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
+        tabBarController.viewControllers = [feedNavigationController, logInNavigationController]
         tabBarController.tabBar.backgroundColor = UIColor.white
 
         let window = UIWindow(windowScene: windowScene)
