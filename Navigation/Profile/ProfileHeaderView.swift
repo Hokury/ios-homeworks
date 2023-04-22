@@ -68,19 +68,19 @@ class ProfileHeaderView: UIView {
         return button
     }()
 
-    private let newButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemGray2
-        button.setTitle("New Button", for: .normal)
-        button.layer.cornerRadius = 4
-        button.layer.masksToBounds = false
-        button.layer.shadowOffset = CGSize(width: 4, height: 4)
-        button.layer.shadowRadius = 4
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.7
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
+//    private let newButton: UIButton = {
+//        let button = UIButton()
+//        button.backgroundColor = .systemGray2
+//        button.setTitle("New Button", for: .normal)
+//        button.layer.cornerRadius = 4
+//        button.layer.masksToBounds = false
+//        button.layer.shadowOffset = CGSize(width: 4, height: 4)
+//        button.layer.shadowRadius = 4
+//        button.layer.shadowColor = UIColor.black.cgColor
+//        button.layer.shadowOpacity = 0.7
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -97,7 +97,7 @@ class ProfileHeaderView: UIView {
         addSubview(statusLabel)
         addSubview(statusTextField)
         addSubview(setStatusButton)
-        addSubview(newButton)
+       // addSubview(newButton)
 
 
         NSLayoutConstraint.activate([
@@ -123,9 +123,9 @@ class ProfileHeaderView: UIView {
             setStatusButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             setStatusButton.heightAnchor.constraint(equalToConstant: 36),
 
-            newButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            newButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            newButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+//            newButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+//            newButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+//            newButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
 
         setStatusButton.addTarget(self, action: #selector(setStatus), for: .touchUpInside)
