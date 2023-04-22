@@ -115,7 +115,7 @@ class ProfileHeaderView: UIView {
             statusTextField.leadingAnchor.constraint(equalTo: fullNameLabel.leadingAnchor),
             statusTextField.trailingAnchor.constraint(equalTo: setStatusButton.trailingAnchor),
             statusTextField.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 8),
-    //      statusTextField.heightAnchor.constraint(equalToConstant: 50),
+            statusTextField.heightAnchor.constraint(equalToConstant: 50),
             statusTextField.heightAnchor.constraint(equalToConstant: 36),
 
             setStatusButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
